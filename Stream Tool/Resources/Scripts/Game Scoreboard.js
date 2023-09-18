@@ -91,11 +91,7 @@ async function getData(scInfo) {
 				const p2IntroEL = document.getElementById('p2Intro');
 
 				p1IntroEL.textContent = p1Name; //update player 1 intro text
-				p1IntroEL.style.fontSize = '85px'; //resize the font to its max size
-				resizeText(p1IntroEL); //resize the text if its too large
-				p2IntroEL.style.fontSize = '85px';
 				p2IntroEL.textContent = p2Name; //p2
-				resizeText(p2IntroEL);
 
 				//change the color of the player text shadows
 				p1IntroEL.style.textShadow = '0px 0px 20px ' + getHexColor(p1Color);
@@ -618,20 +614,15 @@ function updateSocial(mainSocial, mainText, mainBox, otherSocial, otherBox) {
 //player text change
 function updatePlayerName(wrapperID, nameID, teamID, pName, pTeam) {
 	const nameEL = document.getElementById(nameID);
-	nameEL.style.fontSize = '30px'; //set original text size
 	nameEL.textContent = pName; //change the actual text
 	const teamEL = document.getElementById(teamID);
-	teamEL.style.fontSize = '20px';
 	teamEL.textContent = pTeam;
-	resizeText(document.getElementById(wrapperID)); //resize if it overflows
 }
 
 //round change
 function updateRound(round) {
 	const roundEL = document.getElementById('round');
-	roundEL.style.fontSize = roundSize; //set original text size
 	roundEL.textContent = round; //change the actual text
-	resizeText(roundEL); //resize it if it overflows
 }
 
 //generic text changer

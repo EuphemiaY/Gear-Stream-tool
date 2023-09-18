@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Melee Game Overlay</title>
+
+    <script src="Resources/Scripts/scoreboard.js"></script>
+    <script src="Resources/Scripts/gsap.min.js"></script>
+    
+
+    <style>
+        @font-face {
+            font-family: "gear";
+            src: url('Resources/Fonts/Impact_-_Strive.otf');
+        }
+
+        body {
+            width: 1920px;
+            height: 1080px;
+            overflow: hidden;
+            background-image: url('background.png');;
+            padding: 0px;
+            margin: 0px;
+            color: #000000;
+            font-family: "gear";
+            white-space: nowrap;
+            position:absolute;
+        }
+
+        .outline
+        {
+            text-shadow:
+            -1px -1px 0 #ffffff,
+            1px -1px 0 #ffffff,
+            -1px 1px 0 #ffffff,
+            1px 1px 0 #ffffff;  
+        }
+
+        #p1Name {
+            position:absolute;
+            top: 11px;
+            left: 280px;
+            font-size: 50px;
+            text-align: left;
+        }
+
+        #p2Name {
+            position:absolute;
+            top: 11px;
+            right: 270px;
+            font-size: 50px;
+            text-align: right;
+        }
+
+        #p1score {
+            position: absolute;
+            font-size: 85px;
+            top: -40px;
+            left: 200px;
+        }
+
+        #p2score {
+            position: absolute;
+            font-size: 85px;
+            top: -40px;
+            right: 200px;
+        }
+
+        #tournament{
+            position: absolute;
+            font-size: 57px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 40px;
+            text-align: center;
+        }
+        
+        #round{
+            font-size: 40px;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1 id="p1Name" class="outline"></h1>
+    <h1 id="p2Name" class="outline"></h1>
+    <h1 id="p1score" class="outline"> 2 </h1>
+    <h1 id="p2score" class="outline"> 2 </h1>
+    <h1 id="tournament" class="outline"> Fuck It, We Ball | 2</h1>
+    <h1 id="round" class="outline"> Winner's Quaters </h1>
+
+</body>
