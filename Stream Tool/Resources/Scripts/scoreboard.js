@@ -32,6 +32,9 @@ async function getData(scInfo) {
   let p1pronoun = scInfo["caster1Twitch"];
   let p2pronoun = scInfo["caster1Twitch"];
 
+  let p1WL = scInfo["p1WL"];
+  let p2WL = scInfo["p2WL"];
+
   // Updating player 1
   if (document.getElementById("p1Name").textContent != p1Name) {updatePlayerName("p1Name", p1Name, p1Team, "pronoun1", p1pronoun);}
   // Updating player 2
@@ -51,6 +54,25 @@ async function getData(scInfo) {
   // But like Casters this time
   if (document.getElementById("caster1").textContent != caster1) {document.getElementById("caster1").textContent = caster1;}
   if (document.getElementById("caster2").textContent != caster2) {document.getElementById("caster2").textContent = caster2;}
+
+  if (p1WL == "W") {
+    var win = document.createElement("img");
+    win.setAttribute("src", "Resources/Overlay/Win.png");
+    document.getElementById("p1Picture").innerHTML = win.outerHTML;
+    var loss = document.createElement("img");
+    loss.setAttribute("src", "Resources/Overlay/loss.png");
+    document.getElementById("p2Picture").innerHTML = loss.outerHTML;
+  } else if (p1WL == "L") {
+    var win = document.createElement("img");
+    win.setAttribute("src", "Resources/Overlay/loss.png");
+    document.getElementById("p2Picture").innerHTML = win.outerHTML;
+    var loss = document.createElement("img");
+    loss.setAttribute("src", "Resources/Overlay/Win.png");
+    document.getElementById("p2Picture").innerHTML = loss.outerHTML;
+  } else {
+    document.getElementById("p2Picture").innerHTML = "";
+    document.getElementById("p1Picture").innerHTML = "";
+  }
 }
 
 //searches for the main json file
