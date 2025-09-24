@@ -30,15 +30,15 @@ async function getData(scInfo) {
   let p1Twitter = scInfo["caster1Twitter"];
   let p2Twitter = scInfo["caster2Twitter"];
   let p1pronoun = scInfo["caster1Twitch"];
-  let p2pronoun = scInfo["caster1Twitch"];
+  let p2pronoun = scInfo["caster2Twitch"];
 
   let p1WL = scInfo["p1WL"];
   let p2WL = scInfo["p2WL"];
 
   // Updating player 1
-  if (document.getElementById("p1Name").textContent != p1Name) {updatePlayerName("p1Name", p1Name, p1Team, "pronoun1", p1pronoun);}
+  if (document.getElementById("p1Name").textContent != p1Name) {updatePlayerName("p1Name", p1Name, p1Team, "", p1pronoun);}
   // Updating player 2
-  if (document.getElementById("p2Name").textContent != p2Name) {updatePlayerName("p2Name", p2Name, p2Team, "pronoun2", p2pronoun);}
+  if (document.getElementById("p2Name").textContent != p2Name) {updatePlayerName("p2Name", p2Name, p2Team, "", p2pronoun);}
   // Update round count
   if (document.getElementById("round").textContent != round) {roundUpdate(round);}
   // Update tournament name
@@ -55,21 +55,21 @@ async function getData(scInfo) {
   if (document.getElementById("caster1").textContent != caster1) {document.getElementById("caster1").textContent = caster1;}
   if (document.getElementById("caster2").textContent != caster2) {document.getElementById("caster2").textContent = caster2;}
 
-  if (p1WL == "W" && P2WL== "L") {
+  if (p1WL == "W" && p2WL== "L") {
     var win = document.createElement("img");
     win.setAttribute("src", "Resources/Overlay/Win.png");
     document.getElementById("p1Picture").innerHTML = win.outerHTML;
     var loss = document.createElement("img");
     loss.setAttribute("src", "Resources/Overlay/loss.png");
     document.getElementById("p2Picture").innerHTML = loss.outerHTML;
-  } else if (p1WL == "L" && P2WL =="W") {
+  } else if (p1WL == "L" && p2WL =="W") {
     var loss = document.createElement("img");
     loss.setAttribute("src", "Resources/Overlay/loss.png");
     document.getElementById("p2Picture").innerHTML = loss.outerHTML;
     var win = document.createElement("img");
     win.setAttribute("src", "Resources/Overlay/Win.png");
     document.getElementById("p2Picture").innerHTML = win.outerHTML;
-  } else if (P1WL =="L" && P2WL =="L"){
+  } else if (P1WL =="L" && p2WL =="L"){
     var loss = document.createElement("img");
     loss.setAttribute("src", "Resources/Overlay/loss.png");
     document.getElementById("p2Picture").innerHTML = loss.outerHTML;
