@@ -55,21 +55,27 @@ async function getData(scInfo) {
   if (document.getElementById("caster1").textContent != caster1) {document.getElementById("caster1").textContent = caster1;}
   if (document.getElementById("caster2").textContent != caster2) {document.getElementById("caster2").textContent = caster2;}
 
-  if (p1WL == "W") {
+  if (p1WL == "W" && P2WL== "L") {
     var win = document.createElement("img");
     win.setAttribute("src", "Resources/Overlay/Win.png");
     document.getElementById("p1Picture").innerHTML = win.outerHTML;
     var loss = document.createElement("img");
     loss.setAttribute("src", "Resources/Overlay/loss.png");
     document.getElementById("p2Picture").innerHTML = loss.outerHTML;
-  } else if (p1WL == "L") {
-    var win = document.createElement("img");
-    win.setAttribute("src", "Resources/Overlay/loss.png");
-    document.getElementById("p2Picture").innerHTML = win.outerHTML;
+  } else if (p1WL == "L" && P2WL =="W") {
     var loss = document.createElement("img");
-    loss.setAttribute("src", "Resources/Overlay/Win.png");
+    loss.setAttribute("src", "Resources/Overlay/loss.png");
     document.getElementById("p2Picture").innerHTML = loss.outerHTML;
-  } else {
+    var win = document.createElement("img");
+    win.setAttribute("src", "Resources/Overlay/Win.png");
+    document.getElementById("p2Picture").innerHTML = win.outerHTML;
+  } else if (P1WL =="L" && P2WL =="L"){
+    var loss = document.createElement("img");
+    loss.setAttribute("src", "Resources/Overlay/loss.png");
+    document.getElementById("p2Picture").innerHTML = loss.outerHTML;
+    document.getElementById("p1Picture").innerHTML = loss.outerHTML;
+  }
+  else {
     document.getElementById("p2Picture").innerHTML = "";
     document.getElementById("p1Picture").innerHTML = "";
   }
@@ -107,7 +113,7 @@ function updatePlayerName(nameID, pName, pTeam, pronounID, pronoun) {
   if (pronoun != "") {
     pronounEl.textContent = "[" + pronoun + "]";
   } else {
-    nameEL.textContent = pName;
+    nameEL.textContent = pTeam + "  |  " + pName;
   }
 }
 
