@@ -65,11 +65,11 @@ async function getData(scInfo) {
   } else if (p1WL == "L" && p2WL =="W") {
     var loss = document.createElement("img");
     loss.setAttribute("src", "Resources/Overlay/loss.png");
-    document.getElementById("p2Picture").innerHTML = loss.outerHTML;
+    document.getElementById("p1Picture").innerHTML = loss.outerHTML;
     var win = document.createElement("img");
     win.setAttribute("src", "Resources/Overlay/Win.png");
     document.getElementById("p2Picture").innerHTML = win.outerHTML;
-  } else if (P1WL =="L" && p2WL =="L"){
+  } else if (p1WL =="L" && p2WL =="L"){
     var loss = document.createElement("img");
     loss.setAttribute("src", "Resources/Overlay/loss.png");
     document.getElementById("p2Picture").innerHTML = loss.outerHTML;
